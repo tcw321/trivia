@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from category import *
 
 class Game:
     def __init__(self):
@@ -75,22 +76,22 @@ class Game:
             self._ask_question()
     
     def _ask_question(self):
-        if self._current_category == 'Pop': print(self.pop_questions.pop(0))
-        if self._current_category == 'Science': print(self.science_questions.pop(0))
-        if self._current_category == 'Sports': print(self.sports_questions.pop(0))
-        if self._current_category == 'Rock': print(self.rock_questions.pop(0))
+        if self._current_category == Category.Pop: print(self.pop_questions.pop(0))
+        if self._current_category == Category.Science: print(self.science_questions.pop(0))
+        if self._current_category == Category.Sports: print(self.sports_questions.pop(0))
+        if self._current_category == Category.Rock: print(self.rock_questions.pop(0))
     
     @property
     def _current_category(self):
-        if self.places[self.current_player] == 0: return 'Pop'
-        if self.places[self.current_player] == 4: return 'Pop'
-        if self.places[self.current_player] == 8: return 'Pop'
-        if self.places[self.current_player] == 1: return 'Science'
-        if self.places[self.current_player] == 5: return 'Science'
-        if self.places[self.current_player] == 9: return 'Science'
-        if self.places[self.current_player] == 2: return 'Sports'
-        if self.places[self.current_player] == 6: return 'Sports'
-        if self.places[self.current_player] == 10: return 'Sports'
+        if self.places[self.current_player] == 0: return Category.Pop
+        if self.places[self.current_player] == 4: return Category.Pop
+        if self.places[self.current_player] == 8: return Category.Pop
+        if self.places[self.current_player] == 1: return Category.Science
+        if self.places[self.current_player] == 5: return Category.Science
+        if self.places[self.current_player] == 9: return Category.Science
+        if self.places[self.current_player] == 2: return Category.Sports
+        if self.places[self.current_player] == 6: return Category.Sports
+        if self.places[self.current_player] == 10: return Category.Sports
         return 'Rock'
 
     def was_correctly_answered(self):
