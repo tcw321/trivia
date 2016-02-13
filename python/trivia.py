@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 from category import *
 
+class Players:
+    def __init__(self):
+        self.players = []
+
+    def length(self):
+        return 0;
+
 class Game:
     def __init__(self):
         self.players = []

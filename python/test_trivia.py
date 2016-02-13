@@ -24,5 +24,15 @@ class TestTrivia(unittest.TestCase):
         result = game.question_builder(category_questions, Category.Rock)
         self.assertEqual(len(result), 50)
 
+class TestPlayer(unittest.TestCase):
+
+    def test_player(self):
+        players = Players()
+        self.assertEqual(0, players.length())
+
+    def test_get_players_players_length_equal_zero(self):
+        players = Players()
+        self.assertEqual(0, len(players.players))
+
 if __name__ == '__main__':
     unittest.main()
