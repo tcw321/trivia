@@ -45,5 +45,11 @@ class TestPlayer(unittest.TestCase):
 
         self.assertEquals('Yoda', players.get_player_name(0))
 
+    def test_player_length_returns_number_of_players(self):
+        players = Players()
+        players.append('Yoda')
+
+        self.assertEquals(1, players.length())
+
 if __name__ == '__main__':
     unittest.main()
