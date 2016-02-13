@@ -8,9 +8,15 @@ class Players:
     def length(self):
         return 0;
 
+    def append(self, name_):
+        self.players.append(name_)
+
+    def get_player_name(self, index):
+        return self.players[index]
+
 class Game:
     def __init__(self):
-        self.players = []
+        self.players = Players()
         self.places = [0] * 6
         self.purses = [0] * 6
         self.in_penalty_box = [0] * 6
@@ -44,13 +50,13 @@ class Game:
         self.in_penalty_box[self.how_many_players] = False
         
         print(player_name + " was added")
-        print("They are player number %s" % len(self.players))
+        print("They are player number %s" % self.how_many_players)
         
         return True
     
     @property
     def how_many_players(self):
-        return len(self.players)
+        return self.players.length()
     
     def roll(self, roll):
         print("%s is the current player" % self.players[self.current_player])

@@ -34,5 +34,16 @@ class TestPlayer(unittest.TestCase):
         players = Players()
         self.assertEqual(0, len(players.players))
 
+    def test_player_class_should_have_append_method(self):
+        players = Players()
+        players.append("abc")
+        self.assertEquals(len(players.players), 1)
+
+    def test_player_current_player_will_return_current_player_name(self):
+        players = Players()
+        players.append('Yoda')
+
+        self.assertEquals('Yoda', players.get_player_name(0))
+
 if __name__ == '__main__':
     unittest.main()
